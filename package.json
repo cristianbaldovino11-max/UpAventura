@@ -5,8 +5,5 @@
   "scripts": {
     "dev": "npx http-server . -p 3000",
     "build": "echo 'Static site - no build needed'"
-  },
-  "vercel": {
-    "outputDirectory": "."
   }
 }
