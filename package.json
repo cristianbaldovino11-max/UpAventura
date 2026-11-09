@@ -1,0 +1,12 @@
+{
+  "name": "up-una-aventura-de-altura",
+  "version": "1.0.0",
+  "description": "Aplicacion interactiva sobre la pelicula Up (2009) - Una aventura de altura",
+  "scripts": {
+    "dev": "npx http-server . -p 3000",
+    "build": "echo 'Static site - no build needed'"
+  },
+  "vercel": {
+    "outputDirectory": "."
+  }
+}

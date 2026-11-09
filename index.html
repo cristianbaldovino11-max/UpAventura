@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Up: Una aventura de altura</title>
+  <meta name="description" content="Aplicación interactiva sobre la película Up (2009) — Una aventura de altura. Personajes, rompecabezas, escenas, autores y resumen de la película.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%232563EB'/><text x='50' y='70' font-size='52' text-anchor='middle' fill='white' font-family='Arial'>U</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="top-bar">
+    <div class="top-bar__inner">
+      <span class="top-bar__brand">Up · Una aventura de altura</span>
+      <span class="top-bar__counter" id="visit-counter"></span>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ============ HERO / RESUMEN ============ -->
+    <section class="hero" id="inicio">
+      <div class="hero__bg"></div>
+      <div class="hero__card">
+        <div class="hero__badge">✦ Película · 2009 · Pixar</div>
+        <h1>Up: <span>Una aventura de altura</span></h1>
+        <p class="hero__tagline">"El verdadero propósito de la vida no son las posesiones, sino las personas con las que las compartimos."</p>
+        <p class="hero__meta">
+          <span>Director: Pete Docter</span>
+          <span>Pixar Animation Studios</span>
+          <span>Disney · Vista el 29 de mayo de 2009</span>
+        </p>
+        <div class="hero__actions">
+          <a href="#personajes" class="btn btn--blue">Explorar personajes</a>
+          <a href="#rompecabezas" class="btn btn--purple">Jugar al rompecabezas</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ LO QUE SIGNIFICA LA PELICULA ============ -->
+    <section class="card-section">
+      <h2 class="section-title">
+        <span class="icon">💭</span>
+        Lo que significa esta película
+      </h2>
+      <div class="card-section__grid">
+        <div class="card-section__text">
+          <p><em>Up</em> (2009) es una película animada de <strong>Pixar</strong> dirigida por <strong>Pete Docter</strong>, extendida en los cines el 29 de mayo de 2009. La historia sigue a <strong>Carl Fredricksen</strong>, un anciano que, después de la muerte de su esposa Ellie, desea cumplir una promesa: enganchar globos a su casa y volar a Paradise Falls, el lugar soñado. El viaje se convierte en una carrera contra el tiempo y la distancia, acompañado de <strong>Russell</strong>, un joven explorador, y de <strong>Dug</strong>, un perro que habla con un collar traductor.</p>
+          <p><strong>Lo que significa la película:</strong></p>
+          <ul>
+            <li>El verdadero propósito de la vida no son las posesiones, sino las <strong>relaciones</strong> que mantenemos con las personas.</li>
+            <li>Es fácil <strong>olvidar</strong> a quienes amamos mientras corren las cosas cotidianas.</li>
+            <li>La aventura no termina cuando alguien se va; seguimos explorando si conservamos la <strong>curiosidad</strong>.</li>
+            <li>Crecer no es perder la imaginación: el corazón de Carl guarda la chispa del sueño.</li>
+            <li>El amor, la pérdida y el perdón nos enseñan a <strong>recomenzar</strong>.</li>
+          </ul>
+        </div>
+        <div class="card-section__visual">
+          <div class="theme-card">
+            <div class="theme-card__icon">💙</div>
+            <h3>El corazón de la historia</h3>
+            <p>La película nos recuerda que, aunque la vida nos deja con ausencia, el amor que dejó atrás sigue <strong>sibiendo</strong>. Cada globo es un recuerdo; cada escena, un momento que no se olvida.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PERSONAJES ============ -->
+    <section class="card-section" id="personajes">
+      <h2 class="section-title">
+        <span class="icon">👥</span>
+        Personajes y su significado
+      </h2>
+      <div class="char-grid" id="char-grid">
+        <!-- Los personajes se cargan desde JavaScript -->
+      </div>
+    </section>
+
+    <!-- ============ ROMPECABEZAS ============ -->
+    <section class="card-section" id="rompecabezas">
+      <h2 class="section-title">
+        <span class="icon">🧩</span>
+        Rompecabezas de personajes
+      </h2>
+      <p class="card-section__lead">Usa tu memoria: haz clic en dos tarjetas para emparejar cada personaje con su frase más representativa. Si aciertas, la tarjeta se queda abierta.</p>
+      <div class="puzzle-box" id="puzzle">
+        <div class="puzzle-grid" id="puzzle-grid"></div>
+        <div class="puzzle-hud">
+          <span class="puzzle-hud__label">Parejas encontradas: <strong id="pairs-found">0</strong></span>
+          <span class="puzzle-hud__moves" id="moves">Movimientos: 0</span>
+          <button class="btn btn--purple" id="restart-btn">Nueva partida</button>
+        </div>
+      </div>
+      <p class="card-section__note">🔒 Las ilustraciones son originales y creadas con SVG para este proyecto (no se usan imágenes con copyright).</p>
+    </section>
+
+    <!-- ============ ESCENAS + PUNTUACION ============ -->
+    <section class="card-section" id="escenas">
+      <h2 class="section-title">
+        <span class="icon">🎬</span>
+        Escenas y puntuación (1 a 5)
+      </h2>
+      <p class="card-section__lead">Evalúa cada escena. Tu puntuación totale nos ayuda a conocer qué tal les pareció la película.</p>
+      <div class="scene-list" id="scene-list">
+        <!-- Las escenas se cargan desde JavaScript -->
+      </div>
+    </section>
+
+    <!-- ============ AUTORES ============ -->
+    <section class="card-section" id="autores">
+      <h2 class="section-title">
+        <span class="icon">🛠️</span>
+        Autores de la película
+      </h2>
+      <div class="authors-grid">
+        <div class="author-card">
+          <div class="author-card__avatar">🎬</div>
+          <div>
+            <h3>Pete Docter</h3>
+            <p>Director</p>
+            <p class="author-card__role">Co-creador de la historia y guion</p>
+          </div>
+        </div>
+        <div class="author-card">
+          <div class="author-card__avatar">✍️</div>
+          <div>
+            <h3>Bob Peterson</h3>
+            <p>Guionista</p>
+            <p class="author-card__role">También interpreta el perro Dug</p>
+          </div>
+        </div>
+        <div class="author-card">
+          <div class="author-card__avatar">📝</div>
+          <div>
+            <h3>Tom McCarthy</h3>
+            <p>Escritor de la historia</p>
+            <p class="author-card__role">Colaboró en la narrativa</p>
+          </div>
+        </div>
+        <div class="author-card">
+          <div class="author-card__avatar">📖</div>
+          <div>
+            <h3>Jonas Rivera</h3>
+            <p>Productor</p>
+            <p class="author-card__role">Coordinó la producción</p>
+          </div>
+        </div>
+        <div class="author-card">
+          <div class="author-card__avatar">🎵</div>
+          <div>
+            <h3>Michael Giacchino</h3>
+            <p>Compositor de música</p>
+            <p class="author-card__role">Patrimonio temático de Carl, Ellie, Muntz y la familia</p>
+          </div>
+        </div>
+        <div class="author-card">
+          <div class="author-card__avatar">🏢</div>
+          <div>
+            <h3>Pixar Animation Studios</h3>
+            <p>Estudio productor</p>
+            <p class="author-card__role">Walt Disney Pictures (distribuidor)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VIDEOS DE ESCENAS ============ -->
+    <section class="card-section" id="videos">
+      <h2 class="section-title">
+        <span class="icon">🎥</span>
+        Videos de las escenas
+      </h2>
+      <p class="card-section__lead">Enlace al <strong>trailer oficial</strong> y reproducción de escenas animadas en este sitio.</p>
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-card__play">▶</div>
+          <h3>Trailer oficial · 2009</h3>
+          <p>The official trailer of Up (2009) by Pixar and Disney.</p>
+          <a class="video-card__link" href="https://www.youtube.com/watch?v=umUf/9bs" target="_blank" rel="noopener">Ver en YouTube ↗</a>
+        </div>
+        <div class="video-card">
+          <div class="video-card__play">▶</div>
+          <h3>Despegue de la casa</h3>
+          <p class="video-card__desc">Escena animada: Carl despega en sus globos mientras arden los globos de helio.</p>
+        </div>
+        <div class="video-card">
+          <div class="video-card__play">▶</div>
+          <h3>Carl y Russell</h3>
+          <p class="video-card__desc">Escena animada: el encuentro inesperado y la chispa de amistad.</p>
+        </div>
+        <div class="video-card">
+          <div class="video-card__play">▶</div>
+          <h3>Dug habla</h3>
+          <p class="video-card__desc">Escena animada: el collar traductor de Dug revela sus pensamientos.</p>
+        </div>
+        <div class="video-card">
+          <div class="video-card__play">▶</div>
+          <h3>Encuentro con Muntz</h3>
+          <p class="video-card__desc">Escena animada: la confrontación con el explorador arrogante.</p>
+        </div>
+        <div class="video-card">
+          <div class="video-card__play">▶</div>
+          <h3>La casa regresa</h3>
+          <p class="video-card__desc">Escena animada: la casa amarrada de vuelta a Paradise Falls.</p>
+        </div>
+      </div>
+      <p class="card-section__note">🔒 Debido al copyright, se evita reproducir clips de la película original. Se incluye el enlace al trailer oficial y una representación animada con CSS/HTML.</p>
+    </section>
+
+    <!-- ============ CONTADOR DE VISITAS ============ -->
+    <section class="card-section" id="contador">
+      <h2 class="section-title">
+        <span class="icon">👥</span>
+        Visitantes del sitio
+      </h2>
+      <div class="counter-card">
+        <div class="counter-card__big">
+          <span id="visit-count">0</span>
+          <span class="counter-card__label">personas han visitado este sitio</span>
+        </div>
+        <p class="counter-card__sub">Actualizado automáticamente con Supabase.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer__inner">
+      <p>Up: Una aventura de altura — Aplicación interactiva construida con HTML, CSS, JavaScript y Supabase.</p>
+      <p class="footer__credits">Personajes originales de Pixar Animation Studios. Las ilustraciones del aplicativo son originales (SVG). El trailer oficial está en YouTube (Canal de Pixar).</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="app.js"></script>
+  </body>
+</html>
